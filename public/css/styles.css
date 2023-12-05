@@ -27,6 +27,7 @@ a {
 }
 
 .sidebar {
+    position: relative;
     background-color: var(--bgSoft);
     flex: 1;
     min-height: 100vh;
@@ -40,6 +41,7 @@ a {
     padding: 10px;
 }
 
+
 .listItems {
     list-style: none;
     margin: 10px 0;
@@ -50,7 +52,7 @@ a {
 
 .listItems li a {
     display: block;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     margin: 2px 0;
     transition: all ease 0.3s;
@@ -59,4 +61,107 @@ a {
 .listItems li a:hover,
 .listItems li a.active {
     background: var(--textSoft);
+}
+
+.user {
+    background-color: var(--bgSoft);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.group {
+    display: block;
+    margin: 10px 0;
+}
+
+.group label {
+    display: block;
+}
+
+.input {
+    width: 100%;
+    padding: 15px;
+    color: var(--text);
+    background-color: var(--bg);
+    border: 1px solid var(--textSoft);
+    outline: none;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.button {
+    padding: 15px 25px;
+    background-color: var(--textSoft);
+    color: var(--bg);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.title {
+    font-size: 2rem;
+    padding: 10px 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.justifybetween {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.searchForm {
+    background-color: var(--bg);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    color: var(--text);
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+table tr td,
+table tr th {
+    padding: 10px;
+    transition: all ease 0.3s
+}
+
+table tbody tr td:last-child {
+    border-bottom-right-radius: .4rem;
+    border-top-right-radius: .4rem;
+}
+
+table tbody tr td:first-child {
+    border-bottom-left-radius: .4rem;
+    border-top-left-radius: .4rem;
+}
+
+table tbody tr:hover {
+    background-color: rgba(0, 128, 128, 0.247);
+    cursor: pointer;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: .4rem;
+    object-fit: cover;
 }
