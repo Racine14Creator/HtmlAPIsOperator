@@ -165,3 +165,22 @@ table tbody tr:hover {
     border-radius: .4rem;
     object-fit: cover;
 }
+
+.buttons a {
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: .4rem;
+    transition: all ease .3s;
+}
+
+.button a:hover {
+    opacity: .4;
+}
+
+.view {
+    background: rgb(44, 136, 64);
+}
+
+.delete {
+    background-color: rgb(141, 47, 47);
+}
