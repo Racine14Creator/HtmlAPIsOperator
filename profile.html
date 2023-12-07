@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD operator</title>
+    <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="wrapper">
+                <div class="LogoUI">
+                    <h3><a href="#">Racine14 <small>Creator</small></a></h3>
+                </div>
+                <ul class="listItems">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="users.html">Users</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="setting.html">Setting</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="wrapper">
+                <nav class="navbar">
+                    <a href="#" class="logo">Profile</a>
+                    <ul>
+                        <li><a href="#" class="link delete">Logout</a></li>
+                        <li>
+                            <a href="#">
+                                <img src="./public/images/man.jpg" alt="Profile" class="avatar" />
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="flex justifybetween gap">
+                    <div class="flex-3 wrapperData shadow">
+                        <h3 class="title">Profile</h3>
+                        <div class="profileImgCover">
+                            <img src="./public/images/man.jpg" alt="Profile" />
+                        </div>
+                        <div class="data">
+                            <div class="flex justifybetween my-5 align-center py-5 border-raduis border-teal">
+                                <span>Username:</span>
+                                <span>Grace Bisimwa</span>
+                            </div>
+                            <div class="flex justifybetween my-5 align-center py-5 border-raduis border-teal">
+                                <span>Username:</span>
+                                <span>Grace Bisimwa</span>
+                            </div>
+                            <div class="flex justifybetween my-5 align-center py-5 border-raduis border-teal">
+                                <span>Email:</span>
+                                <span>graceBisimwa@gmail.com</span>
+                            </div>
+                            <div class="flex justifybetween my-5 align-center py-5 border-raduis border-teal">
+                                <span>Status:</span>
+                                <span class="active">active</span>
+                            </div>
+                            <div class="flex justifybetween my-5 align-center py-5 border-raduis border-teal">
+                                <span>Created At:</span>
+                                <span class="desactive">12.12.2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sticky-top flex-2 wrapperData shadow">
+                        <h3 class="title">Edit your profile</h3>
+                        <form action="" method="post" autocomplete="off">
+                            <div class="group">
+                                <label for="username">Username</label>
+                                <input type="text" placeholder="Username" name="username" value="" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="email">Email</label>
+                                <input type="email" placeholder="Email@example.com" name="email" value="" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="Password">Password</label>
+                                <input type="Password" placeholder="Password" name="password" value="" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="Image">Image</label>
+                                <input type="file" name="image" value="" class="input">
+                            </div>
+                            <div class="group">
+                                <button class="button">Update profile</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

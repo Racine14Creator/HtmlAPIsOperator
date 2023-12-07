@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD operator</title>
+    <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="wrapper">
+                <div class="LogoUI">
+                    <h3><a href="#">Racine14 <small>Creator</small></a></h3>
+                </div>
+                <ul class="listItems">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="users.html" class="active">Users</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="setting.html">Setting</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="wrapper">
+                <nav class="navbar">
+                    <a href="#" class="logo">Registration</a>
+                    <ul>
+                        <li><a href="#" class="link delete">Logout</a></li>
+                        <li>
+                            <a href="#">
+                                <img src="./public/images/man.jpg" alt="Profile" class="avatar" />
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+
+
+                <div class="user shadow">
+                    <div class="flex justifybetween align-center">
+                        <h3 class="title">Registration of User</h3>
+                        <a href="users.html" class="button delete">Back</a>
+                    </div>
+                    <form action="" autocomplete="off" enctype="multipart/form-data" method="post">
+                        <div class="group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" id="username" class="input" placeholder="Username" />
+                        </div>
+                        <div class="group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="input" placeholder="Email@gmail.com" />
+                        </div>
+                        <div class="group">
+                            <label for="image">Image</label>
+                            <input type="file" name="image" id="image" class="input" />
+                        </div>
+                        <div class="group">
+                            <button type="submit" class="button">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

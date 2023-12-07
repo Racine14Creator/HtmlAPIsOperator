@@ -3,6 +3,8 @@
     --bgSoft: #182237;
     --text: #fff;
     --textSoft: #b7bac1;
+    --tealSoft: rgba(0, 128, 128, 0.386);
+    --red: #fff;
 }
 
 * {
@@ -17,9 +19,87 @@ body {
     font-family: roboto;
 }
 
+.data>div {
+    transition: .3s all ease;
+}
+
+.data>div:hover {
+    cursor: pointer;
+    background-color: rgba(0, 128, 128, 0.057);
+}
+
+
+
+.border-teal {
+    border: 1px solid teal;
+}
+
+.my-5 {
+    margin: 10px auto;
+}
+
+.py-5 {
+    padding: 30px;
+}
+
+.border-raduis {
+    border-radius: 10px;
+}
+
+.shadow {
+
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.align-center {
+    align-items: center;
+}
+
+.wrapperData {
+    background-color: var(--bgSoft);
+    border-radius: 10px;
+    padding: 20px;
+}
+
 a {
     color: inherit;
     text-decoration: none;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 20px;
+}
+
+.active,
+.desactive,
+.count {
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.active {
+    background-color: var(--tealSoft);
+    color: var(--text);
+}
+
+.desactive {
+    background-color: rgba(157, 19, 19, 0.211);
+}
+
+.count {
+    background: rgba(0, 128, 128, 0.164);
+    color: var(--text);
+    border: 1px solid teal;
+    transition: all ease .3s;
+}
+
+.count:hover {
+    background-color: var(--tealSoft);
+}
+
+.my-5 {
+    margin: 20px 0;
 }
 
 .container {
@@ -27,10 +107,20 @@ a {
 }
 
 .sidebar {
-    position: relative;
+    position: sticky;
+    top: 0;
+    left: 0;
     background-color: var(--bgSoft);
     flex: 1;
-    min-height: 100vh;
+    height: 100vh;
+}
+
+.LogoUI {
+    padding: 15px 20px;
+}
+
+.LogoUI h3 {
+    font-size: 29px;
 }
 
 .main {
@@ -38,13 +128,37 @@ a {
 }
 
 .wrapper {
-    padding: 10px;
+    padding: 20px;
 }
 
+.usersUI {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    width: 32%;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.card .icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: #b7bac12a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .listItems {
     list-style: none;
-    margin: 10px 0;
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
 }
@@ -67,7 +181,7 @@ a {
     background-color: var(--bgSoft);
     padding: 20px;
     border-radius: 10px;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .group {
@@ -81,7 +195,8 @@ a {
 
 .input {
     width: 100%;
-    padding: 15px;
+    font-size: 15px;
+    padding: 20px;
     color: var(--text);
     background-color: var(--bg);
     border: 1px solid var(--textSoft);
@@ -113,8 +228,48 @@ a {
     justify-content: space-between;
 }
 
+.gap {
+    gap: 20px;
+}
+
 .items-center {
     align-items: center;
+}
+
+.flex-2 {
+    flex: 2;
+    height: fit-content;
+}
+
+.flex-3 {
+    flex: 3;
+    height: fit-content;
+}
+
+.profileImgCover {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 10px auto;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid teal;
+    border-radius: 50%;
+    transition: all ease-in .3s;
+}
+
+.profileImgCover:hover {
+    cursor: pointer;
+    border: 3px solid teal;
+}
+
+.profileImgCover img {
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .searchForm {
@@ -130,6 +285,7 @@ a {
     background: transparent;
     outline: none;
     border: none;
+    padding: 10px;
 }
 
 table {
@@ -141,7 +297,7 @@ table {
 table tr td,
 table tr th {
     padding: 10px;
-    transition: all ease 0.3s
+    transition: all ease 0.3s;
 }
 
 table tbody tr td:last-child {
@@ -183,4 +339,34 @@ table tbody tr:hover {
 
 .delete {
     background-color: rgb(141, 47, 47);
+}
+
+.navbar {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: var(--bgSoft);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+}
+
+.navbar ul li .link {
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: all ease .3s;
+    font-weight: 400;
 }
