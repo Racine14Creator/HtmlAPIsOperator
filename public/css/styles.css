@@ -370,3 +370,37 @@ table tbody tr:hover {
     transition: all ease .3s;
     font-weight: 400;
 }
+
+.chart {
+    position: relative;
+    width: 90%;
+    height: fit-content;
+    padding: 10px;
+}
+
+.chart div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.chart div span {
+    transition: 0.3 all ease;
+    cursor: pointer;
+    padding: 20px;
+    margin: 10px 0;
+    background: rgba(0, 128, 128, 0.534);
+    border: 1px solid teal;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.imgProfile {
+    position: relative;
+    width: 150px;
+}
+
+.imgFluid {
+    width: 100%;
+}
