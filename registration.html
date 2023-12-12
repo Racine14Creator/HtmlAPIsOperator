@@ -41,7 +41,7 @@
                         <h3 class="title">Registration of User</h3>
                         <a href="users.html" class="button delete">Back</a>
                     </div>
-                    <form action="" autocomplete="off" enctype="multipart/form-data" method="post">
+                    <form action="" id="myForm" autocomplete="off" enctype="multipart/form-data" method="post">
                         <div class="group">
                             <label for="username">Username</label>
                             <input type="text" name="username" id="username" class="input" placeholder="Username" />
@@ -49,6 +49,14 @@
                         <div class="group">
                             <label for="email">Email</label>
                             <input type="email" name="email" id="email" class="input" placeholder="Email@gmail.com" />
+                        </div>
+                        <div class="group">
+                            <label for="isAdmin">Is Admin</label>
+                            <select name="isAdmin" class="input" id="isAdmin">
+                                <option value="">-- Select role --</option>
+                                <option value="1">Admin</option>
+                                <option value="0">User</option>
+                            </select>
                         </div>
                         <div class="group">
                             <label for="image">Image</label>
@@ -64,5 +72,7 @@
         </div>
     </div>
 </body>
+
+<script src="./public/js/User/CreateUser.js"></script>
 
 </html>

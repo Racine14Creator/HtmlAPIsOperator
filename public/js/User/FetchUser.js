@@ -6,13 +6,16 @@ const urlGetUser = UrlParams.get('Get')
 
 const result = document.getElementById("result")
 
+if (urlGetUser) {
+    GetUser()
+}
 
 function GetUser() {
 
     fetch(`http://localhost:7000/users/${urlGetUser}`, { method: "GET" })
         .then(res => {
             res.json().then(user => {
-                document.getElementById("userName").textContent(user.username)
+                document.getElementById("userName").innerHTML = user.username
                 const formattedDate = luxon.DateTime.fromISO(user.createdAt, { zone: 'UTC' }).toFormat("yyyy-MM-dd");
                 result.innerHTML = `
                 <div class="main">
@@ -22,7 +25,7 @@ function GetUser() {
                             <ul>
                                 <li><a href="#" class="link delete">Logout</a></li>
                                 <li>
-                                    <a href="#">
+                                    <a href="profile.html">
                                         <img 
                                             src="${user.profile === undefined ? './public/images/man.jpg' : user.profile}" 
                                             alt="Profile: ${user.username}" class="avatar" 
@@ -58,14 +61,13 @@ function GetUser() {
                                     </div>
                                     <div class="flex justifybetween my-5 align-center py-5 border-raduis border-teal">
                                         <span>Created At:</span>
-                                        <span class="active">${created === undefined ? '02.02.2023' : formattedDate}</span>
+                                        <span class="active">${user.createdAt === undefined ? '02.02.2023' : formattedDate}</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="sticky-top flex-2 wrapperData shadow">
                                 <h3 class="title">Edit your profile</h3>
                                 <form action="" method="put" autocomplete="off">
-
                                     <div class="group">
                                         <label for="username">Username</label>
                                         <input type="text" placeholder="Username" name="username" value="${user.username}" class="input">
@@ -82,7 +84,7 @@ function GetUser() {
                                     </div>
 
                                     <div class="group">
-                                        <button class="button delete text-white">Update profile</button>
+                                        <button class="button delete text-white">Update ${user.username}</button>
                                     </div>
                                 </form>
                             </div>
@@ -94,4 +96,3 @@ function GetUser() {
         })
         .catch(error => console.log(error))
 }
-GetUser()
