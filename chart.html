@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <!-- Include Luxon script -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.0/build/global/luxon.min.js"></script>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Your HTML content -->
+    <div id="result"></div>
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <script>
+        function createBarChart(data) {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Admin', 'Active', 'Inactive'],
+                    datasets: [{
+                        label: 'User Count',
+                        data: [data.adminCount, data.activeCount, data.inactiveCount],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)', // Red for Admin
+                            'rgba(75, 192, 192, 0.2)', // Green for Active
+                            'rgba(255, 206, 86, 0.2)'  // Yellow for Inactive
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(255, 206, 86, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function SelectUsers() {
+            let result = document.getElementById("result");
+            let output = "";
+
+            fetch("http://localhost:7000/users", { method: "GET" })
+                .then((res) => {
+                    res.json().then((data) => {
+                        if (data.length > 0) {
+                            let adminCount = data.filter(user => user.isadmin).length;
+                            let activeCount = data.filter(user => user.active).length;
+                            let inactiveCount = data.length - activeCount;
+
+                            output += `
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>Profile</th>
+                                            <th>Created At</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                            `;
+
+                            data.forEach((user) => {
+                                // Your existing code
+                            });
+
+                            output += `
+                                    </tbody>
+                                </table>
+                            `;
+
+                            result.innerHTML = output;
+
+                            // Call the function to create a bar chart
+                            createBarChart({ adminCount, activeCount, inactiveCount });
+                        } else {
+                            output = '<p>No data found</p>';
+                            result.innerHTML = output;
+                        }
+                    });
+                })
+                .catch(error => console.log(error));
+        }
+
+        function getUser(id) {
+            console.log(id);
+        }
+
+        SelectUsers();
+    </script>
+</body>
+
+</html>
