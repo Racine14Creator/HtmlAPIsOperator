@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zod Validation Example</title>
+    <!-- Include Zod script -->
+    <script src="https://cdn.jsdelivr.net/npm/zod@3.6.8"></script>
+</head>
+
+<body>
+    <!-- Your HTML content -->
+    <form action="" method="post">
+        <input type="text" name="username" class="input" placeholder="Username" />
+        <input type="email" name="email" placeholder="email" id="">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+
+        document.addEventListener('submit', function (event) {
+            event.preventDefault()
+
+            // Define a schema using Zod
+            const userSchema = z.object({
+                username: z.string(),
+                email: z.string().email(),
+                // Add more validations as needed
+            });
+
+            // Example user data
+            // const validUser = { username: "john_doe", email: "john@example.com" };
+            // const invalidUser = { username: "john_doe", email: "invalid-email" };
+
+            // Validate and display results
+            validateAndDisplay("Valid User", validUser);
+            validateAndDisplay("Invalid User", invalidUser);
+
+            function validateAndDisplay(label, user) {
+                try {
+                    // Validate the user object against the schema
+                    const validatedUser = userSchema.parse(user);
+                    displayResult(`${label}: User is valid - ${JSON.stringify(validatedUser)}`);
+                } catch (error) {
+                    displayResult(`${label}: Validation error - ${JSON.stringify(error.errors)}`);
+                }
+            }
+
+            function displayResult(message) {
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML += `<p>${message}</p>`;
+            }
+        });
+    </script>
+</body>
+
+</html>
