@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="search" name="search" placeholder="Search..." id="search">
+    <div id="result"></div>
+</body>
+
+<script>
+    const display = document.getElementById("result"),
+        inputSearch = document.getElementById('search'),
+        urlAPIs = "https://jsonplaceholder.typicode.com/posts"
+
+    const getData = async () => {
+        const res = await fetch(urlAPIs),
+            data = await res.json()
+        return data
+    }
+    const displayFunction = async () => {
+        let q = inputSearch.value
+        const payload = await getData()
+        let displayData = payload.map(object => {
+            const { userId, title, body, id } = object
+            return `
+                <div id=${id}>
+                    <h3>${title}</h3>
+                    <p>${body}</p>
+                </div>
+            `
+        }).join("")
+        display.innerHTML = displayData
+    }
+    displayFunction()
+</script>
+
+</html>
