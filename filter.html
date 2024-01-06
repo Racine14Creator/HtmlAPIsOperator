@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Filter</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 <script>
     const display = document.getElementById("result"),
         inputSearch = document.getElementById('search'),
-        urlAPIs = "https://jsonplaceholder.typicode.com/posts"
+        urlAPIs = "https://jsonplaceholder.typicode.com/users"
 
     const getData = async () => {
         const res = await fetch(urlAPIs),
@@ -25,18 +25,24 @@
     const displayFunction = async () => {
         let q = inputSearch.value
         const payload = await getData()
-        let displayData = payload.map(object => {
-            const { userId, title, body, id } = object
+        let displayData = payload.filter(event => {
+            if (q === '') { return event }
+            else if (event.name.toLowerCase().includes(q.toLowerCase())) { return event }
+        }).map(object => {
+            const { name, id, username } = object
             return `
                 <div id=${id}>
-                    <h3>${title}</h3>
-                    <p>${body}</p>
+                    <h3>${name}</h3>
+                    <p>${username}</p>
                 </div>
             `
         }).join("")
         display.innerHTML = displayData
     }
     displayFunction()
+    inputSearch.addEventListener('input', function () {
+        displayFunction()
+    })
 </script>
 
 </html>
