@@ -80,6 +80,19 @@ a {
     top: 20px;
 }
 
+.alert-success,
+.alert-danger {
+    padding: 20px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.alert-danger {
+    background-color: rgba(255, 0, 0, 0.178);
+    border: 2px solid red;
+    color: red;
+}
+
 .active,
 .desactive,
 .count {
