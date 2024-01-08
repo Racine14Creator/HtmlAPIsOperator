@@ -1,10 +1,9 @@
 
-
 function SelectUsers() {
     let result = document.getElementById("result")
     let output = ""
 
-    fetch("http://localhost:7000/users", { method: "GET" })
+    fetch("http://localhost:7000/users", { method: "GET", Accept: "application/json" })
         .then((res) => {
             res.json().then((data) => {
                 if (data.length > 0) {
@@ -38,7 +37,7 @@ function SelectUsers() {
                             <td>
                                 <div class="buttons">
                                     <a href="user.html?Get=${user._id}" class="view">View</a>
-                                    <a href="#?delete=${user._id}" class="delete">Delete</a>
+                                    <a href="delete.html?Get=${user._id}" class="delete">Delete</a>
                                 </div>
                             </td>
                         </tr>
@@ -58,8 +57,20 @@ function SelectUsers() {
         .catch(error => console.log(error));
 }
 
-function getUser(id) {
-    console.log(id)
+let init = async () => {
+    await SelectUsers()
+        .then(() => {
+            Delete()
+        })
 }
 
-SelectUsers();
+function Delete() {
+    const myKeyValue = window.location.search
+
+    const UrlParams = new URLSearchParams(myKeyValue)
+
+    const urlGetUser = UrlParams.get('delete')
+    console.log(urlGetUser)
+
+}
+init()

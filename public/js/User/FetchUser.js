@@ -10,6 +10,7 @@ if (urlGetUser) {
     GetUser()
 }
 
+
 function GetUser() {
 
     fetch(`http://localhost:7000/users/${urlGetUser}`, { method: "GET" })
@@ -67,7 +68,7 @@ function GetUser() {
                             </div>
                             <div class="sticky-top flex-2 wrapperData shadow">
                                 <h3 class="title">Edit your profile</h3>
-                                <form action="" method="put" autocomplete="off">
+                                <form action="" id="myForm2" autocomplete="off">
                                     <div class="group">
                                         <label for="username">Username</label>
                                         <input type="text" placeholder="Username" name="username" value="${user.username}" class="input">
@@ -79,12 +80,16 @@ function GetUser() {
                                     </div>
                                     
                                     <div class="group">
-                                        <label for="Image">Image</label>
-                                        <input type="file" name="image" value="" class="input">
+                                        <label for="isAdmin">I am <span class="span">${user.isAdmin ? 'Admin' : 'User'}</span></label>
+                                        <select name="isAdmin" id="isAdmin" class="input">
+                                            <option value="">--Select --</option>
+                                            <option value="1">Admin</option>
+                                            <option value="0">User</option>
+                                        </select>
                                     </div>
 
                                     <div class="group">
-                                        <button class="button delete text-white">Update ${user.username}</button>
+                                        <button class="button delete text-white" type="submit">Update ${user.username}</button>
                                     </div>
                                 </form>
                             </div>
@@ -96,3 +101,22 @@ function GetUser() {
         })
         .catch(error => console.log(error))
 }
+
+let Init = async () => {
+    await GetUser().then(() => {
+        updateUser()
+    })
+}
+
+const myForm2 = document.getElementById("myForm2")
+
+const updateUser = () => {
+    myForm2.addEventListener("submit", function (event) {
+        event.preventDefault()
+        console.log("Clicked")
+    })
+}
+
+Init()
+
+

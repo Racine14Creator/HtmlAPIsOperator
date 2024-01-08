@@ -37,8 +37,6 @@ body {
     background-color: rgba(0, 128, 128, 0.057);
 }
 
-
-
 .border-teal {
     border: 1px solid teal;
 }
@@ -100,9 +98,16 @@ a {
     border-radius: 20px;
 }
 
-.active {
+.active,
+.span {
     background-color: var(--tealSoft);
     color: var(--text);
+}
+
+.span {
+    padding: 5px;
+    margin-bottom: 20px;
+    border-radius: .4rem;
 }
 
 .desactive {
@@ -127,6 +132,27 @@ a {
 .container {
     display: flex;
 }
+
+.content {
+    margin: auto;
+    width: 50%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    background-color: #c90f0f36;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.box h3,
+.box h2 {
+    margin-bottom: 30px;
+}
+
 
 .sidebar {
     position: sticky;
@@ -207,11 +233,12 @@ a {
 
 .group {
     display: block;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .group label {
     display: block;
+    margin: 5px 0;
 }
 
 .input {
@@ -363,6 +390,9 @@ table tbody tr:hover {
 
 .delete {
     background-color: rgb(141, 47, 47);
+    color: #fff;
+    font-weight: 500;
+    font-size: medium;
 }
 
 .navbar {
