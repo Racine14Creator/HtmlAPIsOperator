@@ -49,9 +49,13 @@
         fetch(`http://localhost:7000/users/${urlGetUser}`, { method: "GET" })
             .then(res => {
                 res.json().then(user => {
-                    result.innerHTML = `
-                        <p class="my-5">Username: ${user.username}</p>
-                    `
+                    if (user.length === 0) {
+                        window.location.href = 'users.html'
+                    } else {
+                        result.innerHTML = `
+                            <p class="my-5">Username: ${user.username}</p>
+                        `
+                    }
                 })
             })
             .catch(error => console.log(error))
