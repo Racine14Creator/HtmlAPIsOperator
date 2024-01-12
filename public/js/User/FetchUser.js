@@ -83,8 +83,8 @@ function GetUser() {
                                         <label for="isAdmin">I am <span class="span">${user.isAdmin ? 'Admin' : 'User'}</span></label>
                                         <select name="isAdmin" id="isAdmin" class="input">
                                             <option value="">--Select --</option>
-                                            <option value="1">Admin</option>
-                                            <option value="0">User</option>
+                                            <option value={${true}} ${user.isAdmin ? 'selected' : ""}>Admin</option>
+                                            <option value={${false}} ${user.isAdmin ? '' : "selected"}>User</option>
                                         </select>
                                     </div>
 
