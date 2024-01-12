@@ -56,8 +56,8 @@ function GetUser() {
                                     </div>
                                     <div class="flex justifybetween my-5 align-center py-5 border-raduis border-teal">
                                         <span>Status:</span>
-                                        <span class="${user.isActive = undefined ? 'desactive' : 'active'}">
-                                            ${user.isActive = undefined ? 'desactive' : 'active'}
+                                        <span class="${user.isActive ? 'active' : 'desactive'} ">
+                                            ${user.isActive ? 'Online' : 'Offline'}
                                         </span>
                                     </div>
                                     <div class="flex justifybetween my-5 align-center py-5 border-raduis border-teal">
@@ -68,7 +68,7 @@ function GetUser() {
                             </div>
                             <div class="sticky-top flex-2 wrapperData shadow">
                                 <h3 class="title">Edit your profile</h3>
-                                <form action="" id="myForm2" autocomplete="off">
+                                <form action="" method="PUT" id="myForm2" autocomplete="off">
                                     <div class="group">
                                         <label for="username">Username</label>
                                         <input type="text" placeholder="Username" name="username" value="${user.username}" class="input">
@@ -111,10 +111,12 @@ let Init = async () => {
 const myForm2 = document.getElementById("myForm2")
 
 const updateUser = () => {
+
     myForm2.addEventListener("submit", function (event) {
         event.preventDefault()
         console.log("Clicked")
     })
+
 }
 
 Init()
