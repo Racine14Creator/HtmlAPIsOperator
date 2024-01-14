@@ -7,7 +7,7 @@ myForm.addEventListener("submit", function (event) {
     const payload = new URLSearchParams(prePayload)
 
     console.log(payload)
-    fetch("http://localhost:7000/users", {
+    fetch(`${urlAPI}/users`, {
         method: "POST",
         body: prePayload
     })
