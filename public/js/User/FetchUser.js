@@ -68,8 +68,9 @@ function GetUser() {
                             </div>
                             <div class="sticky-top flex-2 wrapperData shadow">
                                 <h3 class="title">Edit your profile</h3>
-                                <form action="" method="PUT" id="myForm2" autocomplete="off">
+                                <form action="" method="POST" id="myForm2" autocomplete="off">
                                     <div class="group">
+                                        <input value="${user._id}" name="id" class="input" type="hidden"/>
                                         <label for="username">Username</label>
                                         <input type="text" placeholder="Username" name="username" value="${user.username}" class="input">
                                     </div>
