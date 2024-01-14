@@ -90,7 +90,7 @@ function GetUser() {
                                     </div>
 
                                     <div class="group">
-                                        <button class="button delete text-white" type="submit">Update ${user.username}</button>
+                                        <button class="button delete text-white" type="submit" disabled>Update ${user.username}</button>
                                     </div>
                                 </form>
                             </div>
