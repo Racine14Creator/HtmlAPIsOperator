@@ -12,9 +12,9 @@ function SelectUsers() {
                         <thead>
                             <tr>
                                 <th>Username</th>
-                                <th>Email</th>
+                                <th class="hidden-sm">Email</th>
                                 <th>Profile</th>
-                                <th>Created At</th>
+                                <th class="hidden-sm">Created At</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -27,11 +27,11 @@ function SelectUsers() {
                         output += `
                         <tr key="${user._id}">
                             <td>${user.username}</td>
-                            <td>${user.email}</td>
+                            <td class="hidden-sm">${user.email}</td>
                             <td>
                                 <img src="${user.profile === undefined ? './public/images/man.jpg' : user.profile}" alt="profile" class="avatar">
                             </td>
-                            <td>
+                            <td class="hidden-sm">
                                 <span class="active">${formattedDate}</span>
                             </td>
                             <td>

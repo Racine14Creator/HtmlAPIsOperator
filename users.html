@@ -18,10 +18,12 @@
 
 <body>
     <div class="container">
-        <div class="sidebar">
+        <div class="sidebar hidden-sm">
             <div class="wrapper">
                 <div class="LogoUI">
-                    <h3><a href="#">Racine14 <small>Creator</small></a></h3>
+                    <h3>
+                        <a href="#">Racine14 <small>Creator</small></a>
+                    </h3>
                 </div>
                 <ul class="listItems">
                     <li>
@@ -59,6 +61,7 @@
         <div class="main">
             <div class="wrapper">
                 <nav class="navbar">
+
                     <a href="#" class="logo">Users</a>
                     <ul>
                         <li><a href="#" class="link delete">Logout</a></li>
@@ -71,11 +74,16 @@
                 </nav>
 
                 <div class="user shadow">
-                    <div class="flex justifybetween items-center">
+                    <div class="flex mobile-sm-flex justifybetween items-center">
                         <form action="" method="post" class="searchForm">
                             <input type="text" placeholder="Search..." class="search">
                         </form>
-                        <a href="registration.html" class="button">Add user</a>
+                        <a href="registration.html" class="button mobile-button">
+                            <div class="icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <span class="hidden-sm">Add user</span>
+                        </a>
                     </div>
                     <div id="result">
                         <table>
