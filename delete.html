@@ -30,6 +30,7 @@
     </div>
 </body>
 
+<script src="./public/js/User/index.js"></script>
 <script>
     const myKeyValue = window.location.search
 
@@ -48,7 +49,7 @@
 
     function GetUser() {
 
-        fetch(`http://localhost:7000/users/${urlGetUser}`, { method: "GET" })
+        fetch(`${urlAPI}/users/${urlGetUser}`, { method: "GET" })
             .then(res => {
                 res.json().then(user => {
                     if (user.length === 0) {

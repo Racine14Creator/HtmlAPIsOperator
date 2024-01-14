@@ -13,7 +13,7 @@ if (urlGetUser) {
 
 function GetUser() {
 
-    fetch(`http://localhost:7000/users/${urlGetUser}`, { method: "GET" })
+    fetch(`${urlAPI}/users/${urlGetUser}`, { method: "GET" })
         .then(res => {
             res.json().then(user => {
                 document.getElementById("userName").innerHTML = user.username

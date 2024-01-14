@@ -3,7 +3,7 @@ function SelectUsers() {
     let result = document.getElementById("result")
     let output = ""
 
-    fetch("http://localhost:7000/users", { method: "GET", Accept: "application/json" })
+    fetch(`${urlAPI}/users`, { method: "GET", Accept: "application/json" })
         .then((res) => {
             res.json().then((data) => {
                 if (data.length > 0) {
