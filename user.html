@@ -59,7 +59,14 @@
         <div id="result" class="main">
             <div class="wrapper">
                 <nav class="navbar">
-                    <a href="#" class="logo">Users <span id="userName">{Username}</span></a>
+                    <div class="flex-sm">
+                        <button id="opendMenu" type="button" style="margin-right: 10px" class="hidden-lg square">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a href="user.html" class="logo">
+                            <i class="fa fa-user"></i>
+                            {Username}</a>
+                    </div>
                     <ul>
                         <li><a href="#" class="link delete">Logout</a></li>
                         <li>

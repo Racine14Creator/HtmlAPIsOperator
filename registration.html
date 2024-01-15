@@ -18,10 +18,13 @@
 
 <body>
     <div class="container">
-        <div class="sidebar hidden-sm">
+        <div class="sidebar hidden-sm sidebar-sm" id="sidebar">
             <div class="wrapper">
                 <div class="LogoUI">
                     <h3><a href="#">Racine14 <small>Creator</small></a></h3>
+                    <button id="closeMenu" class="hidden-lg square" type="button">
+                        <i class="fa fa-xmark"></i>
+                    </button>
                 </div>
                 <ul class="listItems">
                     <li>
@@ -39,14 +42,12 @@
                             Users
                         </a>
                     </li>
-                    <li>
-                        <a href="profile.html">
+                    <li><a href="profile.html">
                             <div class="iconSidebar">
                                 <i class="fa fa-user"></i>
                             </div>
                             Profile
-                        </a>
-                    </li>
+                        </a></li>
                     <li><a href="setting.html">
                             <div class="iconSidebar">
                                 <i class="fa fa-gear"></i>
@@ -59,7 +60,12 @@
         <div class="main">
             <div class="wrapper">
                 <nav class="navbar">
-                    <a href="#" class="logo">Registration</a>
+                    <div class="flex-sm">
+                        <button id="opendMenu" type="button" style="margin-right: 10px" class="hidden-lg square">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a href="#" class="logo">Registration</a>
+                    </div>
                     <ul>
                         <li><a href="#" class="link delete">Logout</a></li>
                         <li>
