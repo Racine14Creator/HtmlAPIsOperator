@@ -577,4 +577,31 @@ table tbody tr:hover {
         justify-content: space-between;
         align-items: center;
     }
+
+    .sidebar-sm.hidden-sm {
+        display: block;
+        z-index: 999;
+        margin-left: -250px;
+    }
+
+    .LogoUI {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px auto;
+    }
+
+    .LogoUI h3 {
+        font-size: 12px;
+    }
+
+    .sidebar-sm {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;
+        background-color: #151c2c;
+        transition: all ease 1s;
+    }
 }
