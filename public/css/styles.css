@@ -7,7 +7,8 @@
     --text: #fff;
     --textSoft: #b7bac1;
     --tealSoft: rgba(0, 128, 128, 0.386);
-    --red: #fff;
+    --red: #fc0a0a;
+    --white: #fff;
 }
 
 * {
@@ -469,10 +470,46 @@ table tbody tr:hover {
     width: 100%;
 }
 
-@media(max-width: 760px) {
+.Login {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.groupLogin {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    background-color: var(--bg);
+    padding: 5px 20px;
+    color: var(--white);
+    border-radius: 10px;
+}
+
+.link {
+    text-decoration: underline;
+    color: rgb(41, 139, 252);
+}
+
+.groupLogin input {
+    border: none !important;
+    outline: none !important;
+    background: none !important;
+    padding: 10px;
+    color: var(--white);
+}
+
+@media(width: 760px) {
     * {
         padding: 0;
         margin: 0;
+    }
+
+    .content {
+        margin: 0 auto;
     }
 
     body {
